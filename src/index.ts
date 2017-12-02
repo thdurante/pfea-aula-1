@@ -1,4 +1,9 @@
-import Hello from './services/Hello';
+import ContactListController from './controllers/ContactListController';
 
-const hello = new Hello();
-console.log(hello.greet('Thiago'));
+const controller = new ContactListController;
+controller.initialize();
+
+declare const module: any;
+if (module.hot) {
+  module.hot.accept();
+}
